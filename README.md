@@ -98,6 +98,9 @@ curl -X POST http://localhost:3000/api/webhooks/order/placed -H "Content-Type: a
 
 Replace `http://localhost:3000` with your server URL if different.
 
+### Try API Documentations
+This APIs also bundled with Swagger, to use swagger to test the APIs, use: http://localhost:3000/api-docs/ 
+
 ## License
 
 This project is licensed under the MIT License.
