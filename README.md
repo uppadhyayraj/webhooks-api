@@ -30,6 +30,7 @@ webhooks-api
 
 - Node.js (version 14 or higher)
 - npm (Node package manager)
+- Webhook URL for configuring in the app
 
 ### Installation
 
@@ -64,27 +65,27 @@ The server will start on the port specified in the `.env` file (default is 3000)
 The following endpoints are available for sending order updates:
 
 - **Order Placed**
-  - **POST** `/api/orders/placed`
+  - **POST** `/api/webhooks/order/placed`
   - Request Body: `{ "orderId": "12345", "status": "placed","contactDetails": "tester34@test.com" }`
 
 - **Order Processed**
-  - **POST** `/api/orders/processed`
+  - **POST** `api/webhooks/order/processed`
   - Request Body: `{ "orderId": "12345", "status": "processed","contactDetails": "tester34@test.com" }`
 
 - **Order Picked Up**
-  - **POST** `/api/orders/pickedup`
+  - **POST** `/api/webhooks/order/pickedup`
   - Request Body: `{ "orderId": "12345", "status": "pickedup","contactDetails": "tester34@test.com" }`
 
 - **Order On The Way**
-  - **POST** `/api/orders/ontheway`
+  - **POST** `/api/webhooks/order/ontheway`
   - Request Body: `{ "orderId": "12345", "status": "ontheway","contactDetails": "tester34@test.com" }`
 
 - **Order Delivered**
-  - **POST** `/api/orders/delivered`
+  - **POST** `/api/webhooks/order/delivered`
   - Request Body: `{ "orderId": "12345", "status": "delivered","contactDetails": "tester34@test.com" }`
 
 - **Order Retry**
-  - **POST** `/api/orders/retry`
+  - **POST** `/api/webhooks/order/retry`
   - Request Body: `{ "orderId": "12345", "status": "retry","contactDetails": "tester34@test.com" }`
 
 ### Testing the APIs
@@ -92,7 +93,7 @@ The following endpoints are available for sending order updates:
 You can use tools like Postman or curl to test the APIs. Here’s an example using curl:
 
 ```bash
-curl -X POST http://localhost:3000/api/orders/placed -H "Content-Type: application/json" -d '{"orderId": "12345", "status": "placed","contactDetails": "tester34@test.com"}'
+curl -X POST http://localhost:3000/api/webhooks/order/placed -H "Content-Type: application/json" -d '{"orderId": "12345", "status": "placed","contactDetails": "tester34@test.com"}'
 ```
 
 Replace `http://localhost:3000` with your server URL if different.
